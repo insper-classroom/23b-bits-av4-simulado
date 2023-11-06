@@ -1,0 +1,6 @@
+function Main.main 0
+    push temp 0
+    push temp 1
+    push temp 2
+    call max 3
+    pop temp 0
