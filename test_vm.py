@@ -37,7 +37,7 @@ def test_abs_positivo():
     ram = init_ram()
     ram[TEMP[0]] = 6
     tst = {TEMP[0]: 6}
-    assert vm_test(os.path.join("vm", "abs"), ram, tst)
+    assert vm_test(os.path.join("abs"), ram, tst, 5000)
 
 
 @pytest.mark.telemetry_files(source("abs/abs.vm"))
@@ -45,7 +45,7 @@ def test_abs_negativo():
     ram = init_ram()
     ram[TEMP[0]] = -2
     tst = {TEMP[0]: 2}
-    assert vm_test(os.path.join("vm", "abs"), ram, tst)
+    assert vm_test(os.path.join("abs"), ram, tst, 5000)
 
 
 @pytest.mark.telemetry_files(source("fact/fact.vm"))
@@ -53,7 +53,7 @@ def test_fact_zero():
     ram = init_ram()
     ram[TEMP[0]] = 0
     tst = {TEMP[0]: 1}
-    assert vm_test(os.path.join("vm", "fact"), ram, tst)
+    assert vm_test(os.path.join("fact"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("fact/fact.vm"))
@@ -61,7 +61,7 @@ def test_fact_one():
     ram = init_ram()
     ram[TEMP[0]] = 1
     tst = {TEMP[0]: 1}
-    assert vm_test(os.path.join("vm", "fact"), ram, tst)
+    assert vm_test(os.path.join("fact"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("fact/fact.vm"))
@@ -70,7 +70,7 @@ def test_fact_three():
     x = 3
     ram[TEMP[0]] = x
     tst = {TEMP[0]: math.factorial(x)}
-    assert vm_test(os.path.join("vm", "fact"), ram, tst)
+    assert vm_test(os.path.join("fact"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("fact/fact.vm"))
@@ -79,7 +79,7 @@ def test_fact_generic():
     x = 6
     ram[TEMP[0]] = x
     tst = {TEMP[0]: math.factorial(x)}
-    assert vm_test(os.path.join("vm", "fact"), ram, tst)
+    assert vm_test(os.path.join("fact"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("isEven/isEven.vm"))

@@ -1,2 +1,32 @@
 function max 1
 
+    push argument 0
+    push argument 1
+    gt
+    if-goto 0MAIOR1
+
+    push argument 1
+    push argument 2
+    gt
+    if-goto 1MAIOR2
+
+    label 2MAIOR
+    push argument 2
+    goto END
+
+    label 0MAIOR1
+    push argument 0
+    push argument 2
+    gt
+    if-goto 0MAIOR2
+    goto 2MAIOR
+
+    label 1MAIOR2
+    push argument 1
+    goto END
+
+    label 0MAIOR2
+    push argument 0
+
+    label END
+    return
