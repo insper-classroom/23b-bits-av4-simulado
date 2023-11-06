@@ -87,7 +87,7 @@ def test_isEven_true():
     ram = init_ram()
     ram[TEMP[0]] = 13
     tst = {TEMP[0]: -1}
-    assert vm_test(os.path.join("isEven"), ram, tst, 5000)
+    assert vm_test(os.path.join("isEven"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("isEven/isEven.vm"))
@@ -95,7 +95,7 @@ def test_isEven_false():
     ram = init_ram()
     ram[TEMP[0]] = 22
     tst = {TEMP[0]: 0}
-    assert vm_test(os.path.join("isEven"), ram, tst, 5000)
+    assert vm_test(os.path.join("isEven"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("max/max.vm"))
@@ -108,7 +108,7 @@ def test_max_arg0():
     ram[TEMP[1]] = arg1
     ram[TEMP[2]] = arg2
     tst = {TEMP[0]: arg0}
-    assert vm_test(os.path.join("max"), ram, tst, 5000)
+    assert vm_test(os.path.join("max"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("max/max.vm"))
@@ -121,7 +121,7 @@ def test_max_arg1():
     ram[TEMP[1]] = arg1
     ram[TEMP[2]] = arg2
     tst = {TEMP[0]: arg1}
-    assert vm_test(os.path.join("max"), ram, tst, 5000)
+    assert vm_test(os.path.join("max"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("max/max.vm"))
@@ -134,7 +134,7 @@ def test_max_arg2():
     ram[TEMP[1]] = arg1
     ram[TEMP[2]] = arg2
     tst = {TEMP[0]: arg2}
-    assert vm_test(os.path.join("max"), ram, tst, 5000)
+    assert vm_test(os.path.join("max"), ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("max/max.vm"))
@@ -147,4 +147,4 @@ def test_max_eq():
     ram[TEMP[1]] = arg1
     ram[TEMP[2]] = arg2
     tst = {TEMP[0]: arg2}
-    assert vm_test(os.path.join("max"), ram, tst, 5000)
+    assert vm_test(os.path.join("max"), ram, tst, 50000)

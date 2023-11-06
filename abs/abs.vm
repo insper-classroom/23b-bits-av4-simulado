@@ -1,14 +1,1 @@
 function abs 0
-    push argument 0
-    push constant 0
-    lt
-    if-goto valor_neg
-    push argument 0
-    goto end
-
-label valor_neg
-    push argument 0
-    neg
-
-label end
-    return
